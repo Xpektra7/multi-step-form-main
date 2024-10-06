@@ -184,7 +184,7 @@ function validate() {
     else {
         email.classList.add("border-lightGray");
         email.classList.remove("border-strawberryRed");
-        nameMsg.innerHTML = "";
+        emailMsg.innerHTML = "";
     };
 
     if (phone.value == "") {
