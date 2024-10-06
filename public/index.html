@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="input.css">
+  
+  <title>Frontend Mentor | Multi-step form</title>
+</head>
+<body class="bg-lightGray flex items-center justify-center pt-8 flex-col w-[100vw] h-[100vh]">
+  <section class="rounded-lg w-full bg-none h-[100%] flex flex-col items-center space-y-6 md:p-4 md:flex-row md:bg-white md:w-[min(80%,800px)] md:h-[min(75%,700px)] md:space-y-0 md:space-x-2 lg:space-x-12">
+    <header class="md:w-[300px] md:h-full rounded-lg">
+      <ul class="flex h-full space-x-4 items-center justify-center md:flex-col md:space-y-6 md:space-x-0">
+        <li class="flex items-center justify-center text-white border-[2px] font-bold border-white rounded-full h-[40px] w-[40px]">1</li>
+        <li class="flex items-center justify-center text-white border-[2px] font-bold border-white rounded-full h-[40px] w-[40px]">2</li>
+        <li class="flex items-center justify-center text-white border-[2px] font-bold border-white rounded-full h-[40px] w-[40px]">3</li>
+        <li class="flex items-center justify-center text-white border-[2px] font-bold border-white rounded-full h-[40px] w-[40px] active">4</li>
+      </ul>
+    </header>
+    <main class="h-full w-full flex flex-col justify-between items-center">
+      <!-- Flex Container -->
+      <form class="px-4 w-full drop-shadow-xl md:drop-shadow-none md:px-0">
+
+        <div id="step-1" class="step bg-white w-full hidden h-auto rounded-lg px-6 py-8 md:py-2">
+          <h1 class="text-marineBlue text-2xl mb-2">Personal Info</h1>
+          <p class="text-coolGray">Please provide your name, email address, and phone number.</p>
+          <fieldset class="mt-4">
+            <div class="flex item-center w-full justify-between">
+              <label for="name" class="text-marineBlue text-sm font-bold">Name</label>
+              <small class="text-strawberryRed text-sm" id="name-msg"></small>
+            </div>
+            <input type="text" name="info" id="name" class="w-full h-[40px] border-[1px] border-lightGray rounded text-marineBlue p-2 outline-none font-bold mb-4 mt-1 focus:border-purplishBlue" placeholder="e.g. Stephen King" autocomplete="name">
+            <div class="flex item-center w-full justify-between">
+              <label for="email" class="text-marineBlue text-sm font-bold">Email Address</label>
+              <small class="text-strawberryRed text-sm" id="email-msg"></small>
+            </div>
+            <input type="email" name="info" id="email" class="w-full h-[40px] border-[1px] border-lightGray rounded text-marineBlue p-2 outline-none font-bold mb-4 mt-1 focus:border-purplishBlue" placeholder="e.g. stephenking@lorem.com" autocomplete="email">
+            <div class="flex item-center w-full justify-between">
+              <label for="phone" class="text-marineBlue text-sm font-bold">Phone Number</label>
+              <small class="text-strawberryRed text-sm" id="phone-msg"></small>
+            </div>
+            <input type="tel" name="info" id="phone" class="w-full h-[40px] border-[1px] border-lightGray rounded text-marineBlue p-2 outline-none font-bold mb-4 mt-1 focus:border-purplishBlue" placeholder="e.g. +1 234 567 890" autocomplete="tel">
+          </fieldset>
+        </div>
+        <div id="step-2" class="step bg-white w-full hidden h-auto rounded-lg px-6 py-8 md:py-2">
+          <h1 class="text-marineBlue text-2xl mb-2">Select your Plan</h1>
+          <p class="text-coolGray">You have the option of monthly or yearly billing.</p>
+          <fieldset class="w-full mt-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:justify-between md:space-x-2">
+            <label for="arcade" class="flex w-full space-x-2 items-start border-purplishBlue border-[1px] rounded-lg p-2 hover:border-purplishBlue md:w-1/3 md:flex-col md:p-4 md:space-x-0 md:space-y-6">
+              <img src="assets/images/icon-arcade.svg" alt="arcade" class="rounded-full">
+              <div class="flex flex-col">
+                <h2 class="text-marineBlue font-bold">Arcade</h2>
+                <p class="text-[13px] text-coolGray" id="arcadePrice">$9/mo</p>
+                <p class="yearly text-[13px] text-marineBlue">2 months free</p>
+              </div>
+            </label>
+            <input type="radio" name="plan" id="arcade" checked class="hidden">
+            <label for="advanced" class="flex w-full space-x-2 items-start border-lightGray border-[1px] rounded-lg p-2 hover:border-purplishBlue md:w-1/3 md:flex-col md:p-4 md:space-x-0 md:space-y-6">
+              <img src="assets/images/icon-advanced.svg" alt="advanced" class="rounded-full">
+              <div class="flex flex-col">
+                <h2 class="text-marineBlue font-bold">Advanced</h2>
+                <p class="text-[13px] text-coolGray" id="advancedPrice">$12/mo</p>
+                <p class="yearly text-[13px] text-marineBlue">2 months free</p>
+              </div>
+            </label>
+            <input type="radio" name="plan" id="advanced" class="hidden">
+            <label for="pro" class="flex w-full space-x-2 items-start border-lightGray  border-[1px] rounded-lg p-2 hover:border-purplishBlue md:w-1/3 md:flex-col md:p-4 md:space-x-0 md:space-y-6">
+              <img src="assets/images/icon-pro.svg" alt="pro" class="rounded-full">
+              <div class="flex flex-col">
+                <h2 class="text-marineBlue font-bold">Pro</h2>
+                <p class="text-[13px] text-coolGray" id="proPrice">$9/mo</p>
+                <p class="yearly text-[13px] text-marineBlue">2 months free</p>
+              </div>
+            </label>
+            <input type="radio" name="plan" id="pro" class="hidden">
+          </fieldset>
+          <div class="flex space-x-2 items-center w-full justify-center p-2 mt-4 bg-alabaster rounded-lg">
+            <p class="text-sm text-marineBlue font-bold">Monthly</p>
+            <label for="togglePlan" class="w-12 h-6 rounded-full bg-marineBlue flex items-center p-1" id="toggleBtn">
+            <div class="w-4 h-4 rounded-full bg-white"></div>
+            </label>
+            <p class="text-sm text-coolGray">Yearly</p>
+            <input type="checkbox" name="togglePlan" id="togglePlan" class="hidden">
+          </div>
+        </div>
+        <div id="step-3" class="step bg-white w-full hidden h-auto rounded-lg px-6 py-8 md:py-2">
+          <h1 class="text-marineBlue text-2xl mb-2">Pick add-ons</h1>
+          <p class="text-coolGray">Add-ons help enhance your gaming experience.</p>
+
+          <fieldset class="mt-4">
+            <label for="onlineService" class="flex w-full space-x-4 items-center cursor-pointer border-lightGray border-[1px] rounded-lg p-2 px-4 mb-2 hover:border-purplishBlue">
+              <input type="checkbox" name="add-ons" id="onlineService">
+              <div class="flex justify-between items-center w-full">
+                <div class="flex flex-col">
+                  <h2 class="text-marineBlue font-bold">Online service</h2>
+                  <p class="text-sm text-coolGray" id="proPrice">Access to multiplayer games</p>
+                </div>
+                <p class="text-sm text-purplishBlue font-bold" id="servicePrice"></p>
+              </div>
+            </label>
+            <label for="largerStorage" class="flex w-full space-x-4 items-center cursor-pointer border-lightGray border-[1px] rounded-lg p-2 px-4 mb-2 hover:border-purplishBlue">
+              <input type="checkbox" name="add-ons" id="largerStorage">
+              <div class="flex justify-between items-center w-full">
+                <div class="flex flex-col">
+                  <h2 class="text-marineBlue font-bold">Larger Strorage</h2>
+                  <p class="text-sm text-coolGray" id="proPrice">Extra 1TB of cloud save</p>
+                </div>
+                <p class="text-sm text-purplishBlue font-bold" id="storagePrice"></p>
+              </div>
+            </label>
+            <label for="customizableProfile" class="flex w-full space-x-4 items-center cursor-pointer border-lightGray border-[1px] rounded-lg p-2 px-4 mb-2 hover:border-purplishBlue">
+              <input type="checkbox" name="add-ons" id="customizableProfile">
+              <div class="flex justify-between items-center w-full">
+                <div class="flex flex-col">
+                  <h2 class="text-marineBlue font-bold">Customizable profile</h2>
+                  <p class="text-sm text-coolGray" id="proPrice">Custom theme on your profile</p>
+                </div>
+                <p class="text-sm text-purplishBlue font-bold" id="profilePrice"></p>
+              </div>
+            </label>
+          </fieldset>
+        </div>
+        <div id="step-4" class="step bg-white w-full hidden h-auto rounded-lg px-6 py-8 md:py-2">
+          <h1 class="text-marineBlue text-2xl mb-2">Finishing up</h1>
+          <p class="text-coolGray">Double-check everything looks OK before confirming.</p>
+          <div class="flex flex-col space-y-4 p-4 rounded-lg w-full bg-alabaster my-6 md:my-4">
+            <div class="flex items-center justify-between border-b pb-4">
+              <div class="flex flex-col space-y-0">
+                <h2 class="text-marineBlue font-bold capitalize" id="summaryChoice"></h2>
+                <a href="#" class="text-coolGray underline text-sm" onclick="step2()">Change</a>
+              </div>
+              <p class="text-sm text-marineBlue font-bold" id="summaryPrice"></p>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-coolGray text-sm">Online service</p>
+              <p class="text-sm text-marineBlue font-bold" id="summaryService"></p>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-coolGray text-sm">Larger storage</p>
+              <p class="text-sm text-marineBlue font-bold" id="summaryStorage"></p>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-coolGray text-sm">Customizable profile</p>
+              <p class="text-sm text-marineBlue font-bold" id="summaryProfile"></p>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between p-4">
+            <p class="text-coolGray capitalize"></p>
+            <p class="text-purplishBlue font-bold" id="total">+$12/mo</p>
+          </div>
+
+
+        </div>
+        <div id="step-5" class="step bg-white hidden flex flex-col items-center justify-center space-y-4 h-auto rounded-lg px-6 py-16">
+          <img src="assets/images/icon-thank-you.svg" alt="icon-thank-you">
+          <h1 class="text-marineBlue text-2xl mb-2">Thank you!</h1>
+          <p class="text-coolGray text-center">Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.</p>
+        </div>
+  
+      </form>
+
+      <nav class="flex items-center p-4 px-6 justify-between bg-white w-full">
+        <a href="#" class="text-coolGray" id="back">Go back</a>
+        <button class="bg-marineBlue text-white px-4 py-2 rounded-lg" id="next">Next Step</button>
+      </nav>
+
+    </main>
+  
+  </section>
+
+
+  
+  <div class="attribution hidden">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
