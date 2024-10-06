@@ -34,8 +34,8 @@ Users should be able to:
 ![](./screenshot.jpg)
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/Xpektra7/multi-step-form-main)
+- Live Site URL: [Add live site URL here](https://multi-step-form-main-roan.vercel.app/)
 
 ## My process
 
