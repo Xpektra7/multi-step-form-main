@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url(assets/fonts/Ubuntu-Regular.ttf);
+}
+@font-face {
+    font-family: "Ubuntu-Bold";
+    src: url(assets/fonts/Ubuntu-Bold.ttf);
+}
+
+*{
+    font-family: "Ubuntu",'Open Sans','sans-serif';  
+    transition: .3s ease;
+
+}
+:root{
+    --Marine-blue: hsl(213, 96%, 18%);
+    --Purplish-blue: hsl(243, 100%, 62%);
+    --Pastel-blue: hsl(228, 100%, 84%);
+    --Light-blue: hsl(206, 94%, 87%);
+    --Strawberry-red: hsl(354, 84%, 57%);
+    --Cool-gray: hsl(231, 11%, 63%);
+    --Light-gray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 0%, 100%)
+
+}
+body{
+    background-image:url(assets/images/bg-sidebar-mobile.svg);
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+h1{
+    font-family: "Ubuntu-Bold";
+    
+}
+li.active{
+    background-color:var(--Light-blue);
+    color: var(--Marine-blue);
+    border-color: var(--Light-blue);
+}
+input{
+    &::placeholder{
+        color: var(--Cool-gray);
+    }
+
+    &[type = "checkbox"]{
+        width: 20px;
+        aspect-ratio: 1;
+    }
+}
+label + input[type = "radio"]:checked{
+    border-color:var(--Marine-blue);
+}
+.border-b{
+    border-bottom: 1px solid var(--Light-gray);
+}
+
+@media(min-width:768px) {
+    body{
+        background-image: none;
+    }
+    section{
+        width: min(75%,800px);
+    }
+    header{
+        background-image: url(assets/images/bg-sidebar-desktop.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
