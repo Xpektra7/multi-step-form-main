@@ -181,11 +181,6 @@ function validate() {
         email.classList.add("border-strawberryRed");
         emailMsg.innerHTML = "Invalid email";
     }
-    else if(isValidEmail(email.value)){
-        email.classList.remove("border-lightGray");
-        email.classList.add("border-strawberryRed");
-        emailMsg.innerHTML = "Invalid email";
-    }
     else {
         email.classList.add("border-lightGray");
         email.classList.remove("border-strawberryRed");
