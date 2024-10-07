@@ -31,7 +31,7 @@ const summaryProfile = document.getElementById("summaryProfile");
 const total = document.getElementById("total");
 let index = 1;
 let plan = "monthly";
-let planChoice = "monthly";
+let planChoice = "arcade";
 let planTotal;
 let serviceAmount;
 let storageAmount;
@@ -152,12 +152,8 @@ function isValidEmail(email) {
 }
 
 function isValidPhoneNumber(phone) {
-    if (phone.length > 10) {
-        return true
-    } else {
-        return false
-    }
-    
+    const phonePattern = /^[0-9]{10,15}$/; 
+    return phonePattern.test(phone);    
   }
 
 function validate() {
